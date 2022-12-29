@@ -1,29 +1,41 @@
 {% include 'header.html' %}
 
 <body>
-    <header class="content-center-row">
-        Cabeçalho da Aplicação
+    <header class="content-around-row">
+        <button class="btn-menu" onclick="showMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+        <div class="title">
+            <h1>Cabeçalho da Aplicação</h1>
+        </div>
     </header>
-    <nav class="content-center-col">
+    <nav class="content-center-col" id="nav">
         Menu
     </nav>
     <main>
         <section class="content-center-row">
-            1ª Seção
+            <h3>Operações:</h3>
         </section>
         <section>
-            <article class="content-center-col">
-                1º Artigo
-            </article>
-            <article class="content-center-col">
-                2º Artigo
-            </article>
-            <article class="content-center-col">
-                3º Artigo
-            </article>
+            <form id="form">
+                <article class="content-center-col">
+                    <input type="number" placeholder="Insira o primeiro valor" id="value1">
+                </article>
+                <article class="content-center-col">
+                    <input type="number" placeholder="Inisra o segundo valor" id="value2">
+                </article>
+                <article class="content-around-row">
+                    <button onclick="somar()">Somar</button>
+                    <button onclick="subtrair()">Subtrair</button>
+                    <button onclick="multiplicar()">Multiplicar</button>
+                    <button onclick="dividir()">Dividir</button>
+                </article>
+            </form>
         </section>
         <section class="content-center-row">
-            3ª Seção
+            <h4 id="result">{{ result }}</h4>
         </section>
     </main>
     <footer class="content-center-row">

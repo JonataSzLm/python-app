@@ -18,7 +18,7 @@ body {
         "header header header"
         "nav main main"
         "nav footer footer";
-    grid-template-columns: 20% auto auto;
+    grid-template-columns: min-content auto auto;
     grid-template-rows: 10% 85% 5%;
 
 }
@@ -32,13 +32,37 @@ header {
 
 nav {
     grid-area: nav;
+    justify-self: stretch;
+    width: 25vh;
 
     background-color: rgb(30, 32, 33);
     color: white;
 }
 
+.nav-hide {
+    width: 13vh;
+}
+
+.btn-menu {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    background-color: transparent;
+    gap: 3px;
+    height: 21px;
+}
+
+.btn-menu div {
+    width: 80%;
+    height: 3px;
+    background-color: white;
+}
+
 main {
     grid-area: main;
+    justify-self: stretch;
 
     background-color: #eee;
     color: rgb(60, 60, 60);
@@ -49,7 +73,7 @@ main {
         "sec2"
         "sec3";
     grid-template-columns: auto;
-    grid-template-rows: 20% auto 20%;
+    grid-template-rows: 10% auto 10%;
 }
 
 section:nth-child(1n) {
@@ -94,6 +118,7 @@ article:nth-child(3n) {
 
 footer {
     grid-area: footer;
+    justify-self: stretch;
 
     background-color: white;
     color: black;
@@ -113,4 +138,57 @@ footer {
 
 .content-center-row {
     flex-flow: row nowrap;
+}
+
+.content-around-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row nowrap;
+    padding: 0 20px;
+}
+
+.title {
+    width: 80%;
+}
+
+article input {
+    background-color: #eee;
+    box-shadow: 0 0 .3rem black;
+    color: rgb(60, 60, 60);
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 35px;
+    width: 65%;
+}
+
+article button {
+    font-size: 20px;
+    box-shadow: 0 0 .3rem black;
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+
+article button:hover {
+    opacity: .8;
+}
+
+article button:nth-child(1n) {
+    background-color: lightgoldenrodyellow;
+    color: black;
+}
+
+article button:nth-child(2n) {
+    background-color: lightskyblue;
+    color: black;
+}
+
+article button:nth-child(3n) {
+    background-color: lightcoral;
+    color: black;
+}
+
+article button:nth-child(4n) {
+    background-color: lightgreen;
+    color: black;
 }
